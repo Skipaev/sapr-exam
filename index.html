@@ -83,62 +83,11 @@
             overflow: hidden;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            position: relative;
         }
 
         .question-card:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        /* Стили для просмотренных вопросов */
-        .question-card.viewed {
-            border-left: 4px solid #4caf50;
-            background: linear-gradient(to right, rgba(76, 175, 80, 0.05) 0%, white 100%);
-        }
-
-        .question-card.viewed .question-header {
-            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
-        }
-
-        .question-card.viewed .question-header::after {
-            content: '✓';
-            position: absolute;
-            right: 50px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #4caf50;
-            font-weight: bold;
-            font-size: 1.2rem;
-            z-index: 2;
-        }
-        
-        .question-card.viewed .question-text {
-            padding-right: 40px;
-        }
-
-        /* Стили для последнего открытого вопроса */
-        .question-card.last-opened {
-            border-left: 4px solid #ff9800;
-            background: linear-gradient(to right, rgba(255, 152, 0, 0.08) 0%, white 100%);
-            box-shadow: 0 5px 20px rgba(255, 152, 0, 0.2);
-        }
-
-        .question-card.last-opened .question-header {
-            background: linear-gradient(135deg, #fff3e0 0%, #fef7e6 100%);
-        }
-
-        .question-card.last-opened .question-header::before {
-            content: '👁️';
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.1rem;
-        }
-
-        .question-card.last-opened .question-text {
-            margin-left: 30px;
         }
 
         .question-header {
@@ -149,7 +98,6 @@
             align-items: center;
             background: linear-gradient(135deg, #f8f9ff 0%, #e3f2fd 100%);
             transition: all 0.3s ease;
-            position: relative;
         }
 
         .question-header:hover {
@@ -267,39 +215,6 @@
             .question-text {
                 font-size: 1rem;
             }
-
-            .question-card.last-opened .question-text {
-                margin-left: 25px;
-            }
-
-            .legend-header {
-                flex-direction: column;
-                gap: 15px;
-                align-items: flex-start;
-            }
-
-            .legend-controls {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-                width: 100%;
-            }
-
-            .reset-progress-btn {
-                align-self: stretch;
-                text-align: center;
-            }
-
-            .floating-buttons {
-                right: 15px;
-                bottom: 15px;
-            }
-
-            .floating-btn {
-                width: 45px;
-                height: 45px;
-                font-size: 1.1rem;
-            }
         }
 
         .search-container {
@@ -330,177 +245,6 @@
             transform: translateY(-50%);
             color: #999;
             font-size: 1.2rem;
-        }
-
-        /* Легенда */
-        .legend {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .legend-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .legend-title {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .legend-controls {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .toggle-switch {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .toggle-switch input {
-            display: none;
-        }
-
-        .toggle-slider {
-            position: relative;
-            width: 40px;
-            height: 20px;
-            background: #ccc;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            margin-right: 8px;
-        }
-
-        .toggle-slider::before {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: white;
-            top: 2px;
-            left: 2px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .toggle-switch input:checked + .toggle-slider {
-            background: #4facfe;
-        }
-
-        .toggle-switch input:checked + .toggle-slider::before {
-            transform: translateX(20px);
-        }
-
-        .toggle-label {
-            font-size: 0.85rem;
-            color: #666;
-            white-space: nowrap;
-        }
-
-        .reset-progress-btn {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
-            white-space: nowrap;
-        }
-
-        .reset-progress-btn:hover {
-            background: linear-gradient(135deg, #ee5a52 0%, #ff6b6b 100%);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
-        }
-
-        .reset-progress-btn:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 6px rgba(255, 107, 107, 0.3);
-        }
-
-        /* Плавающие кнопки */
-        .floating-buttons {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .floating-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            transform: scale(0);
-            opacity: 0;
-        }
-
-        .floating-btn.show {
-            transform: scale(1);
-            opacity: 1;
-        }
-
-        .floating-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-        }
-
-        .btn-to-top {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
-        }
-
-        .btn-to-bottom {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-        }
-
-        .legend-color {
-            width: 20px;
-            height: 15px;
-            border-radius: 3px;
-            margin-right: 10px;
-            border: 1px solid #ddd;
-        }
-
-        .legend-color.viewed {
-            background: linear-gradient(to right, rgba(76, 175, 80, 0.3), transparent);
-            border-left: 3px solid #4caf50;
-        }
-
-        .legend-color.last-opened {
-            background: linear-gradient(to right, rgba(255, 152, 0, 0.3), transparent);
-            border-left: 3px solid #ff9800;
         }
     </style>
 </head>
@@ -533,28 +277,6 @@
             <div class="search-container">
                 <input type="text" class="search-input" placeholder="Поиск по вопросам..." id="searchInput">
                 <div class="search-icon">🔍</div>
-            </div>
-
-            <div class="legend">
-                <div class="legend-header">
-                    <div class="legend-title">Обозначения:</div>
-                    <div class="legend-controls">
-                        <label class="toggle-switch">
-                            <input type="checkbox" id="keepOpenToggle">
-                            <span class="toggle-slider"></span>
-                            <span class="toggle-label">Оставлять открытыми</span>
-                        </label>
-                        <button class="reset-progress-btn" id="resetProgressBtn">🔄 Сбросить прогресс</button>
-                    </div>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color viewed"></div>
-                    <span>Просмотренные вопросы (отмечены галочкой ✓)</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color last-opened"></div>
-                    <span>Последний открытый вопрос (отмечен глазом 👁️)</span>
-                </div>
             </div>
 
             <div class="section">
@@ -1724,16 +1446,6 @@
         </div>
     </div>
 
-    <!-- Плавающие кнопки навигации -->
-    <div class="floating-buttons">
-        <button class="floating-btn btn-to-top" id="toTopBtn" title="Наверх">
-            ⬆️
-        </button>
-        <button class="floating-btn btn-to-bottom" id="toBottomBtn" title="К последнему вопросу">
-            ⬇️
-        </button>
-    </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const questionCards = document.querySelectorAll('.question-card');
@@ -1743,281 +1455,34 @@
             const progressPercentSpan = document.getElementById('progressPercent');
             const progressFill = document.getElementById('progressFill');
 
-            let viewedQuestions = new Set();
-            let lastOpenedQuestion = null;
-            let keepOpen = false;
+            let answeredQuestions = new Set();
             const totalQuestions = questionCards.length;
 
             // Обновление статистики
             function updateStats() {
                 totalQuestionsSpan.textContent = totalQuestions;
-                answeredQuestionsSpan.textContent = viewedQuestions.size;
-                const percentage = Math.round((viewedQuestions.size / totalQuestions) * 100);
+                answeredQuestionsSpan.textContent = answeredQuestions.size;
+                const percentage = Math.round((answeredQuestions.size / totalQuestions) * 100);
                 progressPercentSpan.textContent = percentage + '%';
                 progressFill.style.width = percentage + '%';
             }
 
-            // Обновление визуального состояния карточек
-            function updateCardStates() {
-                questionCards.forEach((card, index) => {
-                    // Удаляем все состояния
-                    card.classList.remove('viewed', 'last-opened');
-                    
-                    // Добавляем состояние просмотренной карточки
-                    if (viewedQuestions.has(index)) {
-                        card.classList.add('viewed');
-                    }
-                    
-                    // Добавляем состояние последней открытой карточки
-                    if (lastOpenedQuestion === index) {
-                        card.classList.add('last-opened');
-                    }
-                });
-            }
-
             // Загрузка прогресса из localStorage
-
-function loadProgress() {
-
-    const savedViewed = localStorage.getItem('sapr-exam-viewed');
-
-    const savedLastOpened = localStorage.getItem('sapr-exam-last-opened');
-
-    const savedKeepOpen = localStorage.getItem('sapr-exam-keep-open');
-
-    const savedOpenCards = localStorage.getItem('sapr-exam-open-cards');
-
-    
-
-    if (savedViewed) {
-
-        viewedQuestions = new Set(JSON.parse(savedViewed));
-
-    }
-
-    
-
-    if (savedLastOpened !== null) {
-
-        lastOpenedQuestion = parseInt(savedLastOpened);
-
-    }
-
-    
-
-    if (savedKeepOpen !== null) {
-
-        keepOpen = JSON.parse(savedKeepOpen);
-
-        document.getElementById('keepOpenToggle').checked = keepOpen;
-
-        
-
-        // Восстановить открытые карточки, если режим включен
-
-        if (keepOpen && savedOpenCards) {
-
-            const openCards = JSON.parse(savedOpenCards);
-
-            openCards.forEach(index => {
-
-                if (questionCards[index]) {
-
-                    questionCards[index].classList.add('active');
-
+            function loadProgress() {
+                const saved = localStorage.getItem('sapr-exam-progress');
+                if (saved) {
+                    answeredQuestions = new Set(JSON.parse(saved));
                 }
-
-            });
-
-        }
-
-    }
-
-}
-
-// Сохранение прогресса в localStorage
-
-function saveProgress() {
-
-    localStorage.setItem('sapr-exam-viewed', JSON.stringify([...viewedQuestions]));
-
-    localStorage.setItem('sapr-exam-last-opened', lastOpenedQuestion);
-
-    localStorage.setItem('sapr-exam-keep-open', JSON.stringify(keepOpen));
-
-    
-
-    // Сохранить состояние открытых карточек, если режим включен
-
-    if (keepOpen) {
-
-        const openCards = [];
-
-        questionCards.forEach((card, index) => {
-
-            if (card.classList.contains('active')) {
-
-                openCards.push(index);
-
             }
 
-        });
-
-        localStorage.setItem('sapr-exam-open-cards', JSON.stringify(openCards));
-
-    } else {
-
-        localStorage.removeItem('sapr-exam-open-cards');
-
-    }
-
-}
-
+            // Сохранение прогресса в localStorage
+            function saveProgress() {
+                localStorage.setItem('sapr-exam-progress', JSON.stringify([...answeredQuestions]));
+            }
 
             // Инициализация
             loadProgress();
             updateStats();
-            updateCardStates();
-
-            // Обработка кнопки сброса прогресса
-            const resetBtn = document.getElementById('resetProgressBtn');
-            resetBtn.addEventListener('click', function() {
-                if (confirm('Вы уверены, что хотите сбросить весь прогресс? Это действие нельзя отменить.')) {
-                    // Очистка данных
-                    viewedQuestions.clear();
-                    lastOpenedQuestion = null;
-                    
-                    // Закрытие всех открытых карточек
-                    questionCards.forEach(card => {
-                        card.classList.remove('active');
-                    });
-                    
-                    // Очистка localStorage
-                    localStorage.removeItem('sapr-exam-viewed');
-                    localStorage.removeItem('sapr-exam-last-opened');
-                    
-                    // Обновление интерфейса
-                    updateStats();
-                    updateCardStates();
-                    
-                    // Показать уведомление
-                    showNotification('Прогресс успешно сброшен!');
-                }
-            });
-
-            // Обработка тумблера "Оставлять открытыми"
-const keepOpenToggle = document.getElementById('keepOpenToggle');
-keepOpenToggle.addEventListener('change', function() {
-    keepOpen = this.checked;
-    
-    // Если режим "оставлять открытыми" выключен, закрыть все карточки
-    if (!keepOpen) {
-        questionCards.forEach(card => {
-            card.classList.remove('active');
-        });
-    }
-    
-    saveProgress();
-    showNotification(keepOpen ? 'Режим "Оставлять открытыми" включен' : 'Режим "Оставлять открытыми" выключен');
-});
-
-            // Плавающие кнопки навигации
-            const toTopBtn = document.getElementById('toTopBtn');
-            const toBottomBtn = document.getElementById('toBottomBtn');
-            
-            // Обработка скролла для показа/скрытия кнопок
-            let isScrolling = false;
-            function handleScroll() {
-                if (isScrolling) return;
-                isScrolling = true;
-                
-                requestAnimationFrame(() => {
-                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    const scrollHeight = document.documentElement.scrollHeight;
-                    const clientHeight = document.documentElement.clientHeight;
-                    const scrollPercent = scrollTop / (scrollHeight - clientHeight);
-                    
-                    // Показать кнопку "Вверх" если пролистали больше 20%
-                    if (scrollPercent > 0.2) {
-                        toTopBtn.classList.add('show');
-                        toBottomBtn.classList.remove('show');
-                    } else {
-                        toTopBtn.classList.remove('show');
-                        toBottomBtn.classList.add('show');
-                    }
-                    
-                    isScrolling = false;
-                });
-            }
-            
-            window.addEventListener('scroll', handleScroll);
-            
-            // Инициализация кнопок при загрузке
-            setTimeout(() => {
-                toBottomBtn.classList.add('show');
-            }, 1000);
-            
-            // Обработка кликов по кнопкам
-            toTopBtn.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-            
-            toBottomBtn.addEventListener('click', function() {
-                // Если есть последний открытый вопрос, прокрутить к нему
-                if (lastOpenedQuestion !== null && questionCards[lastOpenedQuestion]) {
-                    questionCards[lastOpenedQuestion].scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'center'
-                    });
-                } else {
-                    // Если нет последнего открытого вопроса, прокрутить к самому последнему вопросу
-                    const lastQuestion = questionCards[questionCards.length - 1];
-                    if (lastQuestion) {
-                        lastQuestion.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'center'
-                        });
-                    }
-                }
-            });
-
-            // Функция показа уведомления
-            function showNotification(message) {
-                const notification = document.createElement('div');
-                notification.style.cssText = `
-                    position: fixed;
-                    top: 20px;
-                    right: 20px;
-                    background: linear-gradient(135deg, #4caf50, #45a049);
-                    color: white;
-                    padding: 15px 20px;
-                    border-radius: 10px;
-                    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
-                    z-index: 1000;
-                    font-size: 14px;
-                    font-weight: 500;
-                    transform: translateX(400px);
-                    transition: transform 0.3s ease;
-                `;
-                notification.textContent = message;
-                document.body.appendChild(notification);
-                
-                // Анимация появления
-                setTimeout(() => {
-                    notification.style.transform = 'translateX(0)';
-                }, 100);
-                
-                // Автоматическое скрытие через 3 секунды
-                setTimeout(() => {
-                    notification.style.transform = 'translateX(400px)';
-                    setTimeout(() => {
-                        document.body.removeChild(notification);
-                    }, 300);
-                }, 3000);
-            }
 
             // Обработка клика по вопросу
             questionCards.forEach((card, index) => {
@@ -2025,28 +1490,15 @@ keepOpenToggle.addEventListener('change', function() {
                 header.addEventListener('click', function() {
                     const isActive = card.classList.contains('active');
                     
-                    // Если включен режим "оставлять открытыми", не закрываем другие карточки
-                    if (!keepOpen) {
-                        questionCards.forEach(c => c.classList.remove('active'));
-                    }
+                    // Закрыть все остальные карточки
+                    questionCards.forEach(c => c.classList.remove('active'));
                     
                     // Переключить текущую карточку
                     if (!isActive) {
                         card.classList.add('active');
-                        
-                        // Отметить как просмотренную
-                        viewedQuestions.add(index);
-                        
-                        // Обновить последнюю открытую
-                        lastOpenedQuestion = index;
-                        
-                        // Сохранить и обновить интерфейс
+                        answeredQuestions.add(index);
                         saveProgress();
                         updateStats();
-                        updateCardStates();
-                    } else if (keepOpen) {
-                        // В режиме "оставлять открытыми" можно закрывать карточки
-                        card.classList.remove('active');
                     }
                 });
             });
